@@ -1,0 +1,158 @@
+/* ---- For Mic Action ------*/
+.mic-icon {
+    width: 40px;
+    height: auto;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    cursor: pointer;
+}
+
+/*.label {*/
+/*    position: relative;*/
+/*    top: -30px;*/
+/*    width: 100px;*/
+/*}*/
+
+.play-stop-icon {
+    width: 40px;
+    height: auto;
+    position: absolute;
+    cursor: pointer;
+    top: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    visibility: hidden;
+}
+
+.wave {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 0;
+    height: 0;
+    border-radius: 50%;
+    border: 2px solid #333;
+    opacity: 0;
+}
+
+.wave-animate {
+    animation: wave 2s linear infinite;
+    opacity: 0.5;
+}
+
+@keyframes wave {
+    0% {
+        width: 0;
+        height: 0;
+        opacity: 0;
+    }
+    50% {
+        width: 60px;
+        height: 60px;
+        opacity: 0.5;
+    }
+    100% {
+        width: 120px;
+        height: 120px;
+        opacity: 0;
+    }
+}
+
+/* Style for the clickable SVG */
+.clickable-svg {
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+
+/* Style for the click impression */
+.clickable-svg:active {
+    transform: scale(0.95);
+}
+/* ---- For Mic Action ------*/
+/* ---- For Dialogue Action ------*/
+.dialogue-box {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.5);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+}
+.dialogue {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0px 0px 10px rgba(0,0,0,0.5);
+    width: 400px;
+    height: 200px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+
+    transform: translate(0%, 0%);
+    /*padding: 20px;*/
+    /*border: 1px solid black;*/
+    /*background-color: white;*/
+    opacity: 0;
+    animation: fadeInScaleUp 0.5s ease-in-out forwards;
+}
+
+@keyframes fadeInScaleUp {
+    0% {
+        opacity: 0;
+        transform: translate(0%, -20%) scale(0.8);
+    }
+    100% {
+        opacity: 1;
+        transform: translate(0%, 0%) scale(1);
+    }
+}
+
+.dialogue textarea {
+    width: 100%;
+    height: 100%;
+    resize: none;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    padding: 10px;
+    margin-bottom: 10px;
+
+}
+.dialogue button {
+    padding: 10px 20px;
+    border-radius: 5px;
+    border: none;
+    color: #fff;
+    font-weight: bold;
+    cursor: pointer;
+}
+.dialogue button.ok {
+    background-color: green;
+    margin-right: 10px;
+}
+.dialogue button.cancel {
+    background-color: red;
+    margin-left: 10px;
+}
+.dialogue .close {
+    position: absolute;
+    top: -5px;
+    right: 0px;
+    cursor: pointer;
+    font-weight: bold;
+    color: #151414;
+    font-size: 24px;
+    border: none;
+    background: none;
+}
+/* ---- For Dialogue Action ------*/
